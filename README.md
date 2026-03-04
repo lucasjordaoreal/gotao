@@ -1,4 +1,4 @@
-# GOTAO.net — Software Premium Dashboard
+# GOTAO.net
 GOTAO.net é uma plataforma de dashboard premium com foco em experiência do usuário (UX), design glassmorphism e animações fluidas. Desenvolvido para administração de produtos digitais com um visual moderno e temática "Mercado Negro" (Purple/Green Neon).
 
 ## ✨ Principais Recursos
