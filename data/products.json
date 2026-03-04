@@ -1,0 +1,52 @@
+[
+    {
+        "id": "aim",
+        "title": "Aimbot",
+        "desc": "O melhor aimbot do mercado, podendo controlar o FOV de forma avançada e o uso de AI para ajustar a mira.",
+        "price": 24.9,
+        "type": "individual",
+        "imgSrc": "uploads/product_1772602650657.png",
+        "imageOffsetX": 0,
+        "imageOffsetY": -101
+    },
+    {
+        "id": "wall",
+        "title": "Wallhack",
+        "desc": "Wallhack avançado",
+        "price": 49.9,
+        "type": "individual",
+        "imgSrc": "uploads/product_1772602656879.png",
+        "imageOffsetX": 0,
+        "imageOffsetY": -104
+    },
+    {
+        "id": "radar",
+        "title": "Radarhack",
+        "desc": "Overlay de radar externo indetectável pelas verificações principais.",
+        "price": 29.9,
+        "type": "individual",
+        "imgSrc": "uploads/product_1772602660021.png",
+        "imageOffsetX": 0,
+        "imageOffsetY": -98
+    },
+    {
+        "id": "bun_all",
+        "title": "Arsenal Completo",
+        "desc": "Acesso total: Aimbot, Wallhack e Radarhack em um pacote só.",
+        "price": 79.9,
+        "type": "bundle",
+        "imgSrc": "uploads/product_1772602673036.png",
+        "imageOffsetX": 0,
+        "imageOffsetY": -22
+    },
+    {
+        "id": "lifetime",
+        "title": "ACESSO VITALÍCIO",
+        "desc": "Todos os recursos para sempre + suporte prioritário V.I.P.",
+        "price": 699.9,
+        "type": "vitalício",
+        "imgSrc": "uploads/product_1772602835999.png",
+        "imageOffsetX": 0,
+        "imageOffsetY": 0
+    }
+]

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOTAO.net | Cheat Premium CS2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syncopate:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-container">
+        <div class="blob purple-blob"></div>
+        <div class="blob green-blob"></div>
+        <div id="particles"></div>
+    </div>
+
+    <!-- NAVBAR (Oculta na tela de auth inicial) -->
+    <nav class="navbar" id="site-navbar" style="display: none;">
+        <div class="nav-brand">
+            <h1 class="logo-small">GOTAO<span>.net</span></h1>
+        </div>
+        <div class="nav-actions" id="nav-actions">
+
+            <!-- SVG de Favoritos (Filtro Global animado) -->
+            <button class="nav-btn fav-filter-btn" id="fav-filter-btn" title="Filtrar Favoritos">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="shadcn-heart">
+                    <path class="heart-left" d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676" />
+                    <path class="heart-right"
+                        d="M12.409 5.824A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+                </svg>
+            </button>
+
+            <!-- SVG do Carrinho (Adaptação Shadcn) -->
+            <button class="nav-btn cart-btn" id="cart-toggle-btn" title="Ver Carrinho">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="shadcn-cart">
+                    <circle class="wheel1" cx="8" cy="21" r="1" />
+                    <circle class="wheel2" cx="19" cy="21" r="1" />
+                    <path class="cart-body"
+                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                </svg>
+                <span class="cart-badge" id="cart-badge">0</span>
+            </button>
+
+            <!-- Avatar / Trigger do Perfil -->
+            <button class="nav-btn avatar-btn" id="profile-toggle-btn" title="Editar Perfil">
+                <img id="nav-avatar-img" src="avatars/default.png" alt="Perfil" />
+            </button>
+
+            <!-- SVG de Logout (Adaptação Shadcn) -->
+            <button class="nav-btn logout-btn" id="logout-btn" title="Sair">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="shadcn-logout">
+                    <path class="arrow-out" d="m16 17 5-5-5-5" />
+                    <path class="arrow-stem" d="M21 12H9" />
+                    <path class="door-frame" d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- TELA DE AUTENTICAÇÃO -->
+    <main class="container view-section" id="view-auth">
+        <header class="header">
+            <h1 class="logo">GOTAO<span>.net</span></h1>
+        </header>
+
+        <div class="glass-card" id="auth-card">
+            <!-- Formulário de Login -->
+            <form id="login-form" class="auth-form active">
+                <h2 class="form-title">AUTENTICAR</h2>
+                <div class="input-group">
+                    <input type="email" id="login-email" placeholder=" " required />
+                    <label for="login-email">Endereço de E-mail</label>
+                    <div class="feedback"></div>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="login-password" placeholder=" " required />
+                    <label for="login-password">Senha</label>
+                    <div class="feedback"></div>
+                </div>
+                <button type="submit" class="neon-button">
+                    <span>INICIALIZAR</span>
+                </button>
+                <p class="toggle-text">Não possui conta? <a href="#" id="show-register">Solicitar Acesso</a></p>
+                <div id="login-message" class="alert-message"></div>
+            </form>
+
+            <!-- Formulário de Registro -->
+            <form id="register-form" class="auth-form hidden">
+                <h2 class="form-title">REGISTRAR</h2>
+                <div class="input-group">
+                    <input type="text" id="reg-username" placeholder=" " required minlength="3" />
+                    <label for="reg-username">Usuário</label>
+                    <div class="feedback"></div>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="reg-email" placeholder=" " required />
+                    <label for="reg-email">E-mail Seguro</label>
+                    <span class="helper-text">Apenas @gmail, @outlook, @hotmail, @yahoo</span>
+                    <div class="feedback"></div>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="reg-password" placeholder=" " required minlength="6" />
+                    <label for="reg-password">Senha Segura</label>
+                    <div class="feedback"></div>
+                </div>
+                <button type="submit" class="neon-button">
+                    <span>CRIAR IDENTIDADE</span>
+                </button>
+                <p class="toggle-text">Já foi validado? <a href="#" id="show-login">Autenticar-se</a></p>
+                <div id="reg-message" class="alert-message"></div>
+            </form>
+        </div>
+    </main>
+
+    <!-- TELA DA LOJA (PRODUTOS) -->
+    <main class="store-container view-section hidden" id="view-store">
+        <header class="store-header">
+            <h2 class="section-title">MERCADO NEGRO</h2>
+            <p class="store-subtitle">Adquira módulos para dominação extrema.</p>
+        </header>
+
+        <!-- Grade Dinâmica de Produtos -->
+        <div class="product-grid" id="product-grid">
+            <!-- Injetado via script.js -->
+        </div>
+    </main>
+
+    <!-- PAINEL DESLIZANTE DO CARRINHO -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-panel glass-card" id="cart-panel">
+        <div class="cart-header">
+            <h3>TERMINAL CARRINHO</h3>
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Injetado via script.js -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: <span id="cart-total-price">R$ 0,00</span></div>
+            <div class="installment-info" id="installment-info">
+                <!-- Cálculos injetados baseados em condições -->
+            </div>
+            <button class="neon-button full-width" id="checkout-btn">
+                <span>FINALIZAR COMPRA</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- MODAL DE PERFIL / AVATAR -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="glass-card modal-content">
+            <h2 class="form-title">SELECIONAR CONFIGURAÇÃO</h2>
+            <div class="avatar-grid" id="avatar-grid">
+                <!-- Injetado via script.js -->
+            </div>
+            <div class="modal-actions">
+                <button class="neon-button full-width" id="save-avatar-btn"><span>ATUALIZAR PROTOCOLO</span></button>
+                <button class="neon-button ghost full-width" id="close-profile-btn"
+                    style="margin-top: 0;"><span>CANCELAR</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template do Coração Estático (Favoritos nos Cards) -->
+    <template id="static-heart-template">
+        <button class="static-heart-btn" title="Adicionar aos Favoritos">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="static-heart-svg">
+                <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            </svg>
+        </button>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

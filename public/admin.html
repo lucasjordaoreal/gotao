@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOTAO.net | Painel Administrativo</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syncopate:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Layer -->
+    <div class="admin-bg">
+        <div class="bg-blob blob-purple"></div>
+        <div class="bg-blob blob-green"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar glass-sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1 class="sidebar-logo">GOTAO<span>.net</span></h1>
+            <p class="sidebar-badge">ADMIN</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/" class="sidebar-return-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="house-icon-svg">
+                    <path class="house-roof"
+                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10" />
+                    <path class="house-body" d="M21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9" />
+                    <path class="house-door" d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                </svg>
+                <span>Voltar para Loja</span>
+            </a>
+
+            <a href="#" class="sidebar-link active" data-view="dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="9" />
+                    <rect x="14" y="3" width="7" height="5" />
+                    <rect x="14" y="12" width="7" height="9" />
+                    <rect x="3" y="16" width="7" height="5" />
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-link" data-view="products">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m7.5 4.27 9 5.15" />
+                    <path
+                        d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                    <path d="m3.3 7 8.7 5 8.7-5" />
+                    <path d="M12 22V12" />
+                </svg>
+                <span>Produtos</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="sidebar-logout" id="admin-logout-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m16 17 5-5-5-5" />
+                    <path d="M21 12H9" />
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                </svg>
+                <span>Sair</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Hamburger -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+    </button>
+
+    <!-- Main Content -->
+    <main class="admin-main" id="admin-main">
+
+        <!-- Dashboard View -->
+        <section class="admin-view active" id="view-dashboard">
+            <div class="view-header">
+                <h2>Dashboard</h2>
+                <p class="view-subtitle" id="admin-greeting">Bem-vindo, administrador.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card glass-card">
+                    <div class="stat-icon purple"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m7.5 4.27 9 5.15" />
+                            <path
+                                d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                        </svg></div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-total-products">0</span>
+                        <span class="stat-label">Produtos</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg></div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-total-users">0</span>
+                        <span class="stat-label">Usuários</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon gradient"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg></div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="stat-avg-price">R$ 0</span>
+                        <span class="stat-label">Preço Médio</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products View -->
+        <section class="admin-view" id="view-products">
+            <div class="view-header">
+                <h2>Gerenciar Produtos</h2>
+                <button class="btn-neon" id="add-product-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14" />
+                        <path d="M5 12h14" />
+                    </svg>
+                    <span>Novo Produto</span>
+                </button>
+            </div>
+            <div class="products-admin-grid" id="products-admin-grid">
+                <!-- Injected by admin.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Fixed FAB Save Button -->
+    <button class="fab-save" id="save-all-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path
+                d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+            <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
+            <path d="M7 3v4a1 1 0 0 0 1 1h7" />
+        </svg>
+        <span>Salvar Todos</span>
+        <span class="fab-badge">Pendentes</span>
+    </button>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "gotao",
+  "version": "1.0.0",
+  "description": "GOTAO.net - CS2 Cheats locally hosted web app (Dependency-free)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

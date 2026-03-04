@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | GOTAO.net</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body class="dark-theme">
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="bg-blob blob-purple"></div>
+        <div class="bg-blob blob-green"></div>
+    </div>
+
+    <div class="checkout-container">
+        <!-- Main Content (Left) -->
+        <main class="checkout-main">
+            <header class="checkout-header">
+                <h2><a href="/" style="color:var(--text-white); text-decoration:none;">GOTAO<span>.net</span></a> /
+                    <span style="color:var(--neon-purple);">Checkout</span>
+                </h2>
+            </header>
+
+            <section class="payment-selection">
+                <h3 class="section-heading">Método de Pagamento</h3>
+                <div class="payment-methods">
+                    <label class="payment-option glass-card active" data-method="credit">
+                        <input type="radio" name="paymentMethod" value="credit" checked hidden>
+                        <div class="method-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="5" width="20" height="14" rx="2" />
+                                <line x1="2" y1="10" x2="22" y2="10" />
+                            </svg>
+                        </div>
+                        <span class="method-name">Cartão de Crédito</span>
+                    </label>
+
+                    <label class="payment-option glass-card" data-method="pix">
+                        <input type="radio" name="paymentMethod" value="pix" hidden>
+                        <div class="method-icon" style="color: var(--neon-green)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 12l10 10 10-10L12 2zM12 18l-6-6 6-6 6 6-6 6z" />
+                            </svg>
+                        </div>
+                        <span class="method-name">PIX</span>
+                    </label>
+
+                    <label class="payment-option glass-card" data-method="boleto">
+                        <input type="radio" name="paymentMethod" value="boleto" hidden>
+                        <div class="method-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 5v14M8 5v14M12 5v14M16 5v14M20 5v14" />
+                            </svg>
+                        </div>
+                        <span class="method-name">Boleto Bancário</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Dynamic Payment Areas -->
+            <section class="payment-details glass-card">
+
+                <!-- Credit Card Form -->
+                <div id="form-credit" class="payment-form active">
+
+                    <!-- 3D Credit Card Component -->
+                    <div class="cc-wrapper">
+                        <div class="cc-inner" id="cc-inner">
+                            <div class="cc-front">
+                                <div class="cc-chip">
+                                    <svg viewBox="0 0 50 50">
+                                        <rect width="50" height="40" rx="6" fill="#ffd700" />
+                                        <path d="M10 0v40M25 0v40M40 0v40M0 13h50M0 27h50" stroke="#b8860b"
+                                            stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <div class="cc-number" id="cc-display-number">0000 0000 0000 0000</div>
+                                <div class="cc-bottom">
+                                    <div class="cc-name-wrapper">
+                                        <span class="cc-label">Titular</span>
+                                        <div class="cc-name" id="cc-display-name">NOME COMPLETO</div>
+                                    </div>
+                                    <div class="cc-exp-wrapper">
+                                        <span class="cc-label">Validade</span>
+                                        <div class="cc-exp" id="cc-display-exp">MM/AA</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cc-back">
+                                <div class="cc-mag-stripe"></div>
+                                <div class="cc-cvv-strip">
+                                    <span id="cc-display-cvv">000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" id="input-cc-num" maxlength="19" placeholder="NÚMERO DO CARTÃO">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="input-cc-name" placeholder="NOME DO TITULAR">
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="text" id="input-cc-exp" maxlength="5" placeholder="MM/AA">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="input-cc-cvv" maxlength="4" placeholder="CVV">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PIX Form -->
+                <div id="form-pix" class="payment-form">
+                    <div class="pix-container">
+                        <div class="pix-qr-box">
+                            <!-- Fake QR SVG -->
+                            <svg viewBox="0 0 100 100" width="150" height="150">
+                                <rect width="100" height="100" fill="white" />
+                                <rect x="10" y="10" width="30" height="30" fill="black" />
+                                <rect x="15" y="15" width="20" height="20" fill="white" />
+                                <rect x="20" y="20" width="10" height="10" fill="black" />
+                                <rect x="60" y="10" width="30" height="30" fill="black" />
+                                <rect x="65" y="15" width="20" height="20" fill="white" />
+                                <rect x="70" y="20" width="10" height="10" fill="black" />
+                                <rect x="10" y="60" width="30" height="30" fill="black" />
+                                <rect x="15" y="65" width="20" height="20" fill="white" />
+                                <rect x="20" y="70" width="10" height="10" fill="black" />
+                                <path d="M50 10h5v25h-5zM45 40h15v5H45zM20 50h20v5H20zM60 60h30v5H60zM75 75h15v15H75z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <p class="pix-instructions">Escaneie o código QR ou copie a chave Pix abaixo. O pagamento é
+                            aprovado na hora.</p>
+                        <div class="pix-key-box">
+                            <input type="text" id="pix-key" value="00020126420014BR.GOV.BCB.PIX0120exemplo@gotao.net"
+                                readonly>
+                            <button class="neon-button" id="copy-pix-btn">Copiar</button>
+                        </div>
+                        <p class="pix-timer">Expira em: <span id="pix-countdown">10:00</span></p>
+                    </div>
+                </div>
+
+                <!-- Boleto Form -->
+                <div id="form-boleto" class="payment-form">
+                    <div class="boleto-container">
+                        <div class="boleto-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 5v14M8 5v14M12 5v14M16 5v14M20 5v14" />
+                            </svg>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem; color:var(--text-white);">Boleto Bancário</h4>
+                        <p
+                            style="color:rgba(255,255,255,0.6); font-size:0.9rem; margin-bottom:1.5rem; text-align:center;">
+                            A liberação ocorre em até 2 dias úteis após o pagamento.</p>
+
+                        <div class="boleto-info">
+                            <p>Vencimento em: <span class="neon-text" id="boleto-vencimento"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <button class="neon-button purple-variant finalize-payment-btn" id="finish-payment-btn">
+                <span>FINALIZAR PAGAMENTO</span>
+            </button>
+        </main>
+
+        <!-- Sidebar Summary (Right) -->
+        <aside class="checkout-sidebar glass-card">
+            <h3>Resumo do Pedido</h3>
+            <div id="checkout-items" class="checkout-items-wrapper">
+                <!-- Injected via checkout.js -->
+            </div>
+            <div class="checkout-total-row">
+                <span>Total</span>
+                <span class="neon-text" id="checkout-total-price">R$ 0,00</span>
+            </div>
+            <div id="checkout-installments" class="checkout-installments-text"></div>
+        </aside>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="checkout.js"></script>
+</body>
+
+</html>
