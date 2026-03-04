@@ -1,10 +1,11 @@
 [
     {
-        "id": "1709564400000",
+        "id": "1772646909990",
         "username": "admin",
-        "email": "dmin@gmail.com",
-        "password": "botandolenha123",
+        "email": "YWRtaW4xMjNAZ21haWwuY29t",
+        "password": "38940cb80f20d334c54ce55c7435ce79:cab8465ef52643d91f67c1e3f494f6b7aeca470e310a92b83e12f1f0ea71e1df3bad4607c3f1212a75084fcf152ea0a122c85daebf9a5de284653733c30b5a9a",
         "role": "admin",
-        "createdAt": "2026-03-04T15:00:00.000Z"
+        "avatar": "default",
+        "createdAt": "2026-03-04T17:55:10.079Z"
     }
 ]
